@@ -1,0 +1,14 @@
+language: ruby
+before_install:
+  - apt-get -y install linkchecker
+  - gem install html-pipeline
+  - gem install github-linguist
+  - gem install github-markdown
+  - gem install sanitize
+  - gem install gemoji
+  - gem install rinku
+
+install:
+  - for f in $(find . -type '*.md') ; do /var/lib/gems/*/gems/html-pipeline*/bin/html-pipeline > /tmp/index.html && linkchecker /tmp/index.html || exit 1 ; done
+
+
