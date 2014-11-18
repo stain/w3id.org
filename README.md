@@ -46,7 +46,7 @@ Adding a Permanent Identifier to w3id.org
 For the technically savvy, the preferred way to create the redirect yourself is
 by following these steps:
 
-1. Fork this source code repository.
+1. Fork the [https://github.com/perma-id/w3id.org](perma-id/w3id.org) source code repository.
 2. Add a new re-direct entry. For a simple example, see
    [security/.htaccess](security/.htaccess) 
 3. (Optional) Add a `README.md` detailing contact persons and 
