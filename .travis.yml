@@ -1,7 +1,6 @@
 language: ruby
-before_install:
+install:
   - sudo apt-get -y install linkchecker apache2
-  - sudo sed -i '/<\/VirtualHost/ i\ <Directory /var/www/html/>\n  AllowOverride All\n </Directory>' /etc/apache2/sites-enabled/*.conf
   - gem install html-pipeline
   - gem install github-linguist
   - gem install github-markdown
@@ -9,9 +8,12 @@ before_install:
   - gem install gemoji
   - gem install rinku
 
-install:
+before_script:
+  - sudo sed -i '/<\/VirtualHost/ i\ <Directory /var/www/html/>\n  AllowOverride All\n </Directory>' /etc/apache2/sites-enabled/*.conf
   - cp -r * /var/www/html/
   - service apache2 restart
+
+script:
   - for f in $(find . -type '*.md') ; do
       ~/.gems/*/gems/html-pipeline*/bin/html-pipeline | 
       sed s,https?://w3id.org/,http://localhost/,g> /tmp/index.html && 
