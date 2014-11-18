@@ -68,7 +68,7 @@ when redirecting. An administrator will then create the redirect for you.
 Link checking
 -------------
 A simple [Travis-CI](https://travis-ci.org/perma-id/w3id.org) job 
-(see [.travis.yml](.travis.yml)) will extract all `https://w3id.org` 
+(see [.travis.yml](.travis.yml)) will extract all https://w3id.org/ 
 URIs from `*/README.md` and check them with
 [linkchecker](https://wummel.github.io/linkchecker/) - 
 in theory this will catch two kinds of errors: 
