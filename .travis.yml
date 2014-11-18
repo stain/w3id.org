@@ -1,7 +1,7 @@
 language: ruby
 before_install:
-  - apt-get -y install linkchecker apache2
-  - sed -i '/<\/VirtualHost/ i\ <Directory /var/www/html/>\n  AllowOverride All\n </Directory>' /etc/apache2/sites-enabled/000-default.conf
+  - sudo apt-get -y install linkchecker apache2
+  - sudo sed -i '/<\/VirtualHost/ i\ <Directory /var/www/html/>\n  AllowOverride All\n </Directory>' /etc/apache2/sites-enabled/000-default.conf
   - gem install html-pipeline
   - gem install github-linguist
   - gem install github-markdown
@@ -12,8 +12,8 @@ before_install:
 install:
   - cp -r * /var/www/html/
   - service apache2 restart
-  - for f in $(find . -type '*.md') ; 
-      do /var/lib/gems/*/gems/html-pipeline*/bin/html-pipeline | 
+  - for f in $(find . -type '*.md') ; do
+      ~/.gems/*/gems/html-pipeline*/bin/html-pipeline | 
       sed s,https?://w3id.org/,http://localhost/,g> /tmp/index.html && 
       linkchecker /tmp/index.html || exit 1 ; done
 
