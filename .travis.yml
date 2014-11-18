@@ -1,22 +1,18 @@
-language: ruby
+language: bash
 install:
-  - sudo apt-get -y install linkchecker apache2 libicu-dev
-  - gem install html-pipeline
-  - gem install github-linguist
-  - gem install github-markdown
-  - gem install sanitize
-  - gem install gemoji
-  - gem install rinku
+  - sudo apt-get -y install linkchecker apache2
 
 before_script:
   - sudo sed -i '/<\/VirtualHost/ i\ <Directory /var/www/html/>\n  AllowOverride All\n </Directory>' /etc/apache2/sites-enabled/*.conf
   - cp -r * /var/www/html/
   - service apache2 restart
+  - echo -e "[filtering]\nignorewarnings=http-moved-permanent" > ~/.linkchecker/linkcheckerrc
 
 script:
-  - for f in $(find . -type '*.md') ; do
-      $(gem contents html-pipeline | grep bin/html-pipeline) |
-      sed s,https?://w3id.org/,http://localhost/,g> /tmp/index.html && 
-      linkchecker /tmp/index.html || exit 1 ; done
+  - cat $(find . -type '*.md') | 
+    grep https://w3id.org | 
+    sed 's,.*https://w3id,https://w3id,' |
+    sed 's,[ )].*,,' | 
+    linkchecker --stdin -r 0
 
 
