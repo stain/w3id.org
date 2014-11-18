@@ -47,11 +47,11 @@ For the technically savvy, the preferred way to create the redirect yourself is
 by following these steps:
 
 1. Fork this source code repository.
-2. Add a new re-direct entry. Look in the [/security/.htaccess] file for a
-   simple example.
+2. Add a new re-direct entry. For a simple example, see
+   [security/.htaccess](security/.htaccess) 
 3. (Optional) Add a `README.md` detailing contact persons and 
-   (a subset of) your permanent identifiers. See [rdw/README.md] for an 
-   example.
+   (a subset of) your permanent identifiers. For an example, 
+   see [rdw/README.md](rdw/README.md)
 4. Commit your changes and submit a pull request.
 5. w3id.org administrators will review your pull request and merge it if 
    everything looks correct. Once the pull request is merged, the changes go
