@@ -10,7 +10,7 @@ before_script:
   - echo -e "[filtering]\nignorewarnings=http-moved-permanent" > ~/.linkchecker/linkcheckerrc
 
 script:
-  - cat $(find . -type '*.md') | 
+  - cat $(find . -name '*.md') | 
     grep https://w3id.org | 
     sed 's,.*https://w3id.org/,http://localhost/,' |
     sed 's,[ )].*,,' | 
