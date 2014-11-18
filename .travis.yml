@@ -18,8 +18,7 @@ before_script:
 script:
   - cat $(find . -name 'README.md') | 
     grep https://w3id.org | 
-    sed 's,[ )].*,,' > checking-uris.txt 
-  - cat checking-uris.txt  
+    sed 's,[ )].*,,' > checking-uris.txt  ; cat checking-uris.txt
   - cat checking-uris.txt | sed 's,.*https://w3id.org/,http://localhost/,' | linkchecker --stdin -r 0
 
 after_script:
