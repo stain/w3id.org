@@ -1,6 +1,6 @@
 language: ruby
 install:
-  - sudo apt-get -y install linkchecker apache2
+  - sudo apt-get -y install linkchecker apache2 libicu-dev
   - gem install html-pipeline
   - gem install github-linguist
   - gem install github-markdown
