@@ -12,7 +12,7 @@ before_script:
   - sudo a2enmod rewrite
   - sudo service apache2 restart
   - mkdir -p ~/.linkchecker
-  - echo -e "[filtering]\nignorewarnings=http-moved-permanent" > ~/.linkchecker/linkcheckerrc
+  - echo -e "[filtering]\nignorewarnings=http-moved-permanent,http-empty-content" > ~/.linkchecker/linkcheckerrc
   - sudo tail -f /var/log/apache2/error.log >&2 &
 
 script:
