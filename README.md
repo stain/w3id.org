@@ -1,6 +1,8 @@
 Permanent Identifiers for the Web
 =================================
 
+[![Build Status](https://travis-ci.org/perma-id/w3id.org.svg)](https://travis-ci.org/perma-id/w3id.org)
+
 This repository holds the website source code for https://w3id.org/
 
 The purpose of w3id.org is to provide a secure, permanent URL re-direction
