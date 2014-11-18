@@ -1,4 +1,4 @@
-RewriteEngine off
+RewriteEngine on
 
 RewriteRule ^$ https://researchobject.github.io/specifications/bundle/ [R=302,L]
 RewriteRule ^draft(.*) https://researchobject.github.io/specifications/bundle/draft$1 [R=302,L]
