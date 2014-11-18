@@ -15,7 +15,7 @@ before_script:
 
 script:
   - for f in $(find . -type '*.md') ; do
-      ~/.gems/*/gems/html-pipeline*/bin/html-pipeline | 
+      $(gem contents html-pipeline | grep bin/html-pipeline) |
       sed s,https?://w3id.org/,http://localhost/,g> /tmp/index.html && 
       linkchecker /tmp/index.html || exit 1 ; done
 
