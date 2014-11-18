@@ -52,7 +52,8 @@ by following these steps:
 3. (Optional) Add a `README.md` detailing contact persons and 
    (a subset of) your permanent identifiers. For an example, 
    see [rdw/README.md](rdw/README.md)
-4. Commit your changes and submit a pull request.
+4. Commit your changes and submit a 
+   [pull request](https://github.com/perma-id/w3id.org/pulls).
 5. w3id.org administrators will review your pull request and merge it if 
    everything looks correct. Once the pull request is merged, the changes go
    live immediately.
@@ -68,7 +69,7 @@ Link checking
 A simple [Travis-CI](https://travis-ci.org/perma-id/w3id.org) job 
 (see [.travis.yml](.travis.yml)) will extract all `https://w3id.org` 
 URIs from README.md and check them with
-[https://wummel.github.io/linkchecker/](linkchecker) - catching 
+[linkchecker](https://wummel.github.io/linkchecker/) - catching 
 if a redirection eventually gives a `404 Not Found` or an 
 error in `.htaccess` causes a `500 Server Error`.
 
