@@ -6,6 +6,7 @@ before_script:
   - sudo sed -i '/<\/VirtualHost/ i\ <Directory /var/www/>\n  AllowOverride All\n </Directory>' /etc/apache2/sites-enabled/*
   - sudo cp -r * /var/www/
   - service apache2 restart
+  - mkdir -p ~/.linkchecker
   - echo -e "[filtering]\nignorewarnings=http-moved-permanent" > ~/.linkchecker/linkcheckerrc
 
 script:
