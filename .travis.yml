@@ -12,7 +12,7 @@ before_script:
 script:
   - cat $(find . -type '*.md') | 
     grep https://w3id.org | 
-    sed 's,.*https://w3id,https://w3id,' |
+    sed 's,.*https://w3id.org/,http://localhost/,' |
     sed 's,[ )].*,,' | 
     linkchecker --stdin -r 0
 
