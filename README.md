@@ -69,10 +69,14 @@ Link checking
 -------------
 A simple [Travis-CI](https://travis-ci.org/perma-id/w3id.org) job 
 (see [.travis.yml](.travis.yml)) will extract all `https://w3id.org` 
-URIs from README.md and check them with
-[linkchecker](https://wummel.github.io/linkchecker/) - catching 
-if a redirection eventually gives a `404 Not Found` or an 
-error in `.htaccess` causes a `500 Server Error`.
+URIs from `*/README.md` and check them with
+[linkchecker](https://wummel.github.io/linkchecker/) - 
+in theory this will catch two kinds of errors: 
+
+1. Following a redirection gives a `404 Not Found` 
+2. An error in `.htaccess` causes a `500 Server Error`.
+
+Note that this only checks URIs that are listed in the `README.md` files.
 
 Travis might comment on your Pull Request if this test reveals an error - 
 check its output logs to ensure the errors are not caused by 
